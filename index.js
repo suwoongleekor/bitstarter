@@ -6,9 +6,14 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
     var buf = new Buffer("String Hello", "utf-8");
+    var str = buf.toString('utf8');
+  response.send(str)
 
-  response.send(buf.toString('utf8')
 })
+
+
+
+
 
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
